@@ -1,0 +1,14 @@
+torch
+transformers
+datasets
+accelerate
+peft
+bitsandbytes
+sentencepiece
+evaluate
+scikit-learn
+pandas
+numpy
+fastapi
+uvicorn
+jinja2

@@ -1,0 +1,16 @@
+{
+    "instruction":"Explique o que é uma variável em Python.",
+    "response":"Uma variável em Python é um nome associado a um valor armazenado na memória. Por exemplo: idade = 20 cria a variável idade com o valor 20."
+}
+{
+    "instruction":"O que é uma lista em Python?",
+    "response":"Uma lista é uma estrutura de dados que permite armazenar vários valores em uma única variável. Exemplo: frutas = ['maçã', 'banana', 'laranja']."
+}
+{
+    "instruction":"Explique um loop for em Python.",
+    "response":"O loop for permite percorrer elementos de uma sequência, como uma lista. Exemplo: for nome in nomes: print(nome)."
+}
+{
+    "instruction":"O que é uma função em Python?",
+    "response":"Uma função é um bloco de código reutilizável que executa uma tarefa específica. Ela pode receber parâmetros e retornar um valor."
+}
