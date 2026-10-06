@@ -1,44 +1,71 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from peft import PeftModel
 
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+BASE_MODEL = "Qwen/Qwen2.5-3B-Instruct"
+ADAPTER_MODEL = "models/python-tutor-qlora"
 
-print("=" * 50)
-print("TESTE DA LLM")
-print("=" * 50)
+print("=" * 60)
+print("TESTE DA LLM TREINADA COM QLoRA")
+print("=" * 60)
 
 print("CUDA disponível:", torch.cuda.is_available())
 
 if not torch.cuda.is_available():
-    raise RuntimeError(
-        "CUDA não está disponível. "
-        "Verifique a instalação do PyTorch."
-    )
+    raise RuntimeError("CUDA não está disponível.")
 
 print("GPU:", torch.cuda.get_device_name(0))
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+print("\nCarregando tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
 
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME,
-    torch_dtype=torch.float16,
-    device_map="auto"
+print("Carregando modelo base em 4-bit...")
+
+from transformers import BitsAndBytesConfig
+
+quantization_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_use_double_quant=True,
 )
 
-print("Modelo carregado!")
-print("Dispositivo:", model.device)
+base_model = AutoModelForCausalLM.from_pretrained(
+    BASE_MODEL,
+    quantization_config=quantization_config,
+    device_map="auto",
+    dtype=torch.float16,
+)
+
+print("Modelo base carregado.")
+
+print("\nCarregando LoRA treinado...")
+
+model = PeftModel.from_pretrained(
+    base_model,
+    ADAPTER_MODEL
+)
+
+model.eval()
+
+print("LoRA carregado.")
+print("Modelo pronto!")
+
+print("=" * 60)
+print("TESTE")
+print("=" * 60)
 
 messages = [
     {
         "role": "system",
         "content": (
-            "Você é um assistente especializado em "
-            "programação Python."
+            "Você é um tutor especializado em programação Python. "
+            "Explique os conceitos de forma clara, objetiva e com exemplos."
         )
     },
     {
         "role": "user",
-        "content": "Explique o que é uma lista em Python."
+        "content": "Explique o que é uma função em Python."
     }
 ]
 
@@ -56,12 +83,12 @@ inputs = {
 }
 
 with torch.no_grad():
-
     outputs = model.generate(
         **inputs,
         max_new_tokens=200,
         temperature=0.7,
-        top_p=0.9
+        top_p=0.9,
+        do_sample=True
     )
 
 input_length = inputs["input_ids"].shape[1]
@@ -73,8 +100,21 @@ response = tokenizer.decode(
     skip_special_tokens=True
 )
 
-print()
-print("=" * 50)
-print("RESPOSTA")
-print("=" * 50)
+print("\n" + "=" * 60)
+print("RESPOSTA DO MODELO TREINADO")
+print("=" * 60)
+
 print(response)
+
+print("\n" + "=" * 60)
+print("INFORMAÇÕES DA GPU")
+print("=" * 60)
+
+print("GPU:", torch.cuda.get_device_name(0))
+print(
+    "VRAM utilizada:",
+    round(torch.cuda.memory_allocated() / 1024**3, 2),
+    "GB"
+)
+
+print("=" * 60)
