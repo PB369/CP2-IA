@@ -139,9 +139,11 @@ O dataset foi criado especificamente para o projeto.
 
 Estrutura:
 
+```
 data/
 ├── train.jsonl
 └──validation.jsonl
+```
 
 O conjunto de treinamento possui 150 exemlos. Já o de validação possui 3 exemplos. Os dados foram armazenados no formato JSONL. Cada exemplo contém uma interação entre usuário e assistente relacionada à programação Python.
 
