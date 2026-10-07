@@ -1,0 +1,56 @@
+AVALIAÇÃO QUALITATIVA - EXPERIMENTO B
+
+Modelo:
+Qwen/Qwen2.5-3B-Instruct
+
+GPU:
+NVIDIA GeForce RTX 3050
+
+CUDA:
+13.2
+
+
+ESCALA DE AVALIAÇÃO
+
+5 - Resposta correta, completa, clara e com exemplo adequado.
+
+4 - Resposta correta, mas apresenta pequena imprecisão,
+    omissão ou problema de clareza.
+
+3 - Resposta parcialmente correta, mas possui alguma
+    informação incompleta ou imprecisa.
+
+2 - Resposta apresenta erros importantes, embora contenha
+    algum conhecimento relacionado ao tema.
+
+1 - Resposta majoritariamente incorreta ou pouco relacionada
+    à pergunta.
+
+0 - Não respondeu ou apresentou resposta completamente
+    incorreta.
+
+
+CRITÉRIOS
+
+Considere:
+
+1. Correção técnica
+2. Clareza da explicação
+3. Completude
+4. Qualidade dos exemplos de código
+5. Adequação ao nível de um tutor de Python
+
+
+Após analisar as respostas em evaluation_results.csv,
+preencha as colunas:
+
+score
+observation
+
+
+Depois execute novamente o script com:
+
+python src\evaluate.py --experiment B
+
+ou utilize o arquivo evaluation_results.csv
+para calcular a média das notas manualmente.

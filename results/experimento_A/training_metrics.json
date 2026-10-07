@@ -1,0 +1,46 @@
+{
+    "experiment": "A",
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "learning_rate": 0.0001,
+    "epochs": 1,
+    "train_samples": 150,
+    "validation_samples": 3,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "lora": {
+        "r": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": [
+            "q_proj",
+            "k_proj",
+            "v_proj",
+            "o_proj"
+        ]
+    },
+    "quantization": {
+        "bits": 4,
+        "type": "NF4",
+        "double_quantization": true,
+        "compute_dtype": "float16"
+    },
+    "gpu": {
+        "name": "NVIDIA GeForce RTX 3050",
+        "vram_gb": 6.0,
+        "cuda": "13.2",
+        "pytorch": "2.14.0+cu132"
+    },
+    "training": {
+        "train_loss": 2.7530478929218494,
+        "train_runtime_seconds": 92.0142,
+        "train_samples_per_second": 1.63,
+        "epoch": 1.0
+    },
+    "validation": {
+        "eval_loss": 2.740112066268921,
+        "eval_runtime_seconds": 0.4842,
+        "eval_samples_per_second": 6.195,
+        "epoch": 1.0
+    },
+    "total_training_time_seconds": 92.41820359230042
+}

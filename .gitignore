@@ -1,0 +1,22 @@
+# Ambiente virtual
+venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+
+# Hugging Face
+.cache/
+.huggingface/
+
+# Modelos e checkpoints
+models/*/checkpoint-*/
+*.safetensors
+
+# Resultados temporários
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db

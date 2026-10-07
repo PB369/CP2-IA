@@ -1,0 +1,200 @@
+﻿id,topic,question,response,generation_time_seconds,score,observation
+1,Lista vs tupla,Qual é a diferença entre uma lista e uma tupla em Python? Explique quando usar cada uma e mostre um exemplo.,"Em Python, as listas e as tuplas são usadas para armazenar vários valores em uma única variável. No entanto, elas têm algumas diferenças importantes.
+
+A primeira e mais óbvia diferença é que listas são mutáveis, enquanto tuplas são imutáveis. Isso significa que você pode alterar itens em uma lista, mas não em uma tupla.
+
+Vamos ver um exemplo de como declarar e manipular ambas as estruturas:
+
+Lista:
+```python
+# Declaração de uma lista
+minha_lista = [1, 2, 3]
+print(minha_lista) # Saída: [1, 2, 3]
+
+# Adicionar um elemento à lista
+minha_lista.append(4)
+print(minha_lista) # Saída: [1, 2, 3, 4]
+
+# Remover um elemento da lista
+minha_lista.remove(2)
+print(minha_lista) # Saída: [1, 3, 4]
+
+# Alterar um elemento na lista
+minha_lista[0] = 5
+print(minha_lista) # Saída: [5, 3, 4]
+```
+
+Tupla:
+```python
+# Declaração de uma tupla
+minha_tupla = (1, 2, 3)
+print(minha_tupla) # Saída: (1, 2,",31.69,,
+2,Exceções,Explique como funciona try e except em Python. Mostre um exemplo tratando uma divisão por zero.,"O módulo `try` e `except` no Python permite que você faça o tratamento de erros. Isso significa que você pode fazer algo quando determinada instrução não funciona. 
+
+No exemplo a seguir, vamos criar um código que faz uma divisão. O problema aqui é que se o divisor for zero, o Python lançará uma exceção chamada `ZeroDivisionError`. Nesse caso, a função `try/except` é usada para lidar com essa exceção.
+
+Vamos usar o seguinte exemplo:
+
+```python
+# Código que tenta fazer uma divisão
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print(""Divisão por zero"")
+```
+
+Neste código, estamos tentando dividir o número 10 pelo número 0. Se você tiver Python instalado corretamente, este código provavelmente dará um erro. No entanto, com a ajuda do `try/except`, podemos lidar com esse erro. Aqui é onde o bloco `try` entra em ação. Ele tenta executar a instrução dentro dele (nesse caso, a divisão). Se ocorrer uma exceção, o bloco `except` é executado, que no nosso caso, imprime a mensagem ""Divisão por zero"".
+
+Portanto, quando você rodar o código acima, ele vai imprimir: ""Divis",31.0,,
+3,Lambda,O que é uma função lambda em Python? Explique e mostre um exemplo simples.,"Em Python, uma função lambda é usada quando você precisa de uma função muito simples, geralmente com apenas um comando. As funções lambda são anônimas (sem nome), o que significa que não temos que dar a elas um nome. São úteis para criar funções por demanda sem precisar declará-las explicitamente no programa.
+
+Aqui estão alguns pontos importantes sobre funções lambda:
+
+1. Funções lambda são definidas usando a palavra-chave `lambda`.
+2. Elas podem ter vários argumentos, mas somente um único expressão.
+3. Não tem corpo de função (não pode conter múltiplas linhas de código).
+4. As funções lambda são sempre retornadas imediatamente após serem criadas.
+
+Vamos ver um exemplo simples:
+
+```python
+# Definindo uma função lambda
+funcao_lambda = lambda x: x * 2
+
+# Usando a função lambda
+resultado = funcao_lambda(5)
+print(resultado)  # Saída: 10
+```
+
+Neste exemplo, a função lambda recebe um único argumento chamado `x`. A expressão dentro da função lambda é apenas `x * 2`, que é o que ela retorna. Isso significa que a função lambda multiplica seu argumento pelo número 2. Quando a função é chamada com o argumento `5`, o resultado é `10`.",31.97,,
+4,Dicionários,"O que é um dicionário em Python? Mostre como criar um dicionário, adicionar uma informação e acessar um valor através de uma chave.","Um dicionário em Python é uma estrutura de dados utilizada para armazenar múltiplos valores em um único objeto. Os valores são indexados por chaves, e não por índices numéricos como ocorre com listas.
+
+### Criação de um Dicionário
+
+Em Python, você cria um dicionário usando chaves `{}` e colchetes `[]`, e separa os elementos com vírgulas `,`. Chave e valor são separados por dois pontos `:`. Por exemplo:
+
+```python
+# Criando um dicionário vazio
+meu_dicionario = {}
+
+# Criando um dicionário com valores
+meu_dicionario = {'nome': 'João', 'idade': 25}
+
+# Criando um dicionário com múltiplos valores
+meu_dicionario = {'pessoa1': {'idade': 23, 'altura': 1.75}, 'pessoa2': {'idade': 28, 'altura': 1.60}}
+```
+
+### Adicionar Informações ao Dicionário
+
+Você pode adicionar novos pares chave-valor ao dicionário, alterando o valor correspondente a uma chave existente ou excluindo uma chave. Aqui está um exemplo de como fazer isso:
+
+```python
+# Adicionando informações ao dicionário
+meu_dicionario['cidade'] =",32.25,,
+5,For vs while,Qual é a diferença entre os loops for e while em Python? Mostre um exemplo de cada.,"Ambos os loops `for` e `while` são usados para repetir um bloco de código várias vezes. No entanto, eles são usados de maneiras diferentes.
+
+O loop `for` é usado quando você sabe quantas vezes o loop deve ser executado ou quando você quer percorrer uma sequência (como uma lista, tupla, string, etc.). O loop `for` é geralmente mais fácil de usar e ler do que o loop `while`.
+
+O loop `while`, por outro lado, é usado quando você não sabe quantas vezes o loop deve ser executado. Você usa o loop `while` quando precisa executar o loop enquanto uma condição específica for verdadeira.
+
+Vamos ver um exemplo de ambos os loops:
+
+### Exemplo do Loop For
+
+Vamos iterar sobre uma lista de nomes:
+
+```python
+names = ['Ana', 'Maria', 'João', 'Lucas']
+
+# Usando loop for
+for name in names:
+    print(name)
+```
+
+Neste exemplo, o loop `for` percorre a lista `names` e imprime cada nome na saída.
+
+### Exemplo do Loop While
+
+Vamos iterar até que uma condição seja falsa:
+
+```python
+count = 0
+max_count = 10
+
+# Usando loop while
+while count < max_count:
+    print(""Contagem: "", count)
+    count += 1
+``",31.8,,
+6,Classes,O que é uma classe em Python? Explique o conceito de objeto e mostre uma classe simples com um atributo e um método.,"Classe em Python:
+
+Uma classe no Python é um modelo para criar objetos. Ela define uma estrutura de dados com certas funções (métodos) relacionadas ao tipo de dados. Uma classe serve como um molde ou esboço para criar objetos.
+
+Objeto em Python:
+
+Um objeto é um instância de uma classe. Em outras palavras, ele é uma representação específica da classe com seus atributos e métodos. 
+
+Vamos agora criar uma classe simples com um atributo e um método. Nesse exemplo, vamos criar uma classe chamada ""Carro"" que terá dois atributos: cor e marca. Além disso, a classe terá um método chamado ""acelerar"", que imprimirá a cor do carro.
+
+```python
+class Carro:
+    def __init__(self, cor, marca):
+        self.cor = cor
+        self.marca = marca
+
+    def acelerar(self):
+        print(f'{self.cor} {self.marca} está acelerando...')
+
+# Criando um objeto da classe Carro
+meu_carro = Carro('preto', 'Fiat')
+meu_carro.acelerar()  # Saída: preto Fiat está acelerando...
+```
+
+Neste exemplo, `meu_carro` é um objeto criado a partir da classe `Carro`. O método `acelerar()` é um comportamento que é execut",30.98,,
+7,Arquivos,Como ler um arquivo de texto de forma segura em Python? Mostre um exemplo utilizando with.,"Ler arquivos de texto de forma segura em Python é fundamental para evitar erros e ataques potenciais. Python oferece uma maneira simples de lidar com isso através da construção `with` que permite abrir um arquivo e fechar o arquivo imediatamente após o processamento, garantindo que todos os recursos do sistema estejam liberados.
+
+Vamos ver um exemplo:
+
+```python
+# Abrindo um arquivo texto
+with open('meu_arquivo.txt', 'r') as file:
+    # Lendo o conteúdo do arquivo
+    content = file.read()
+
+print(content)
+```
+
+Neste exemplo, estamos usando o método `open()` com um parâmetro de entrada de três partes: o nome do arquivo e o modo. Nesse caso, 'r' significa leitura. Se você desejar escrever no arquivo, use 'w' (escrita) em vez de 'r'. 
+
+O `with` garante que o arquivo seja fechado quando o bloco está sendo executado, mesmo se ocorrerem exceções. Portanto, não precisa usar `close()`. 
+
+Se o arquivo não existir, o `open()` retornará um erro `FileNotFoundError`. Para lidar com isso, você pode adicionar um bloco `try-except` ao código:
+
+```python
+with open('meu_arquivo.txt', 'r') as file:
+    try:
+        content = file.read()",31.55,,
+8,List comprehension,O que é list comprehension em Python? Explique e mostre um exemplo que gere os quadrados dos números de 1 a 5.,"List comprehension é uma técnica poderosa no Python usada para criar novas listas a partir de expressões simples sobre as listas existentes. É uma maneira concisa e eficiente de criar listas.
+
+A sintaxe básica de list comprehension é:
+
+    nova_lista = [expressão for elemento in lista]
+
+Isso permite que você crie uma nova lista a partir de uma lista existente, aplicando uma expressão a cada elemento da lista original.
+
+Vamos usar list comprehension para gerar os quadrados dos números de 1 a 5.
+
+Vamos primeiro criar uma lista com números de 1 a 5:
+```python
+numbers = [1, 2, 3, 4, 5]
+```
+Agora, podemos usar list comprehension para gerar a lista de quadrados desses números:
+```python
+squares = [n**2 for n in numbers]
+print(squares) # Output: [1, 4, 9, 16, 25]
+```
+O código acima faz o seguinte:
+
+- Primeiro, criamos uma lista chamada `numbers` com os números de 1 a 5.
+- Em seguida, usamos list comprehension para criar uma nova lista chamada `squares`.
+- A expressão `[n**2 for n in numbers]` é a expressão que será aplicada a cada elemento na lista `numbers`. Aqui, `n",30.4,,

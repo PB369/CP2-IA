@@ -1,0 +1,20 @@
+{
+    "experiment": "B",
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "learning_rate": 5e-05,
+    "epochs": 1,
+    "train_samples": 150,
+    "validation_samples": 3,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "fp16": true,
+    "gradient_checkpointing": true,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "quantization": "4-bit NF4",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "vram_gb": 6.0,
+    "cuda": "13.2",
+    "pytorch": "2.14.0+cu132"
+}
