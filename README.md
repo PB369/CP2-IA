@@ -189,6 +189,7 @@ Foram realizados dois experimentos alterando apenas o learning rate. As demais c
 ### Comparação A × B
 
 | Métrica	| Experimento A | Experimento B |
+|---|---|---|
 | Learning rate | 1e-4 | 5e-5 |
 | Épocas | 1 | 1 |
 | Treinamento | 150 exemplos | 150 exemplos |
@@ -218,7 +219,8 @@ As perguntas abordaram:
 
 Foi utilizada uma escala de 0 a 5:
 
-| Nota | Critério | 
+| Nota | Critério |
+|---|---|---|
 | 5 | Resposta correta, completa e clara |
 | 4 | Resposta correta com pequena imprecisão |
 | 3 | Resposta parcialmente correta |
