@@ -147,6 +147,7 @@ O conjunto de treinamento possui 150 exemlos. Já o de validação possui 3 exem
 
 ## 8. Estrutura do projeto
 
+```
 CP2-IA/
 │
 ├── data/
@@ -177,6 +178,7 @@ CP2-IA/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ## 9. Comparação dos Experimentos A e B
 
