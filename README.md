@@ -4,8 +4,6 @@ Projeto desenvolvido para a atividade de treinamento e avaliação de uma LLM lo
 
 O projeto utiliza o modelo **Qwen2.5-3B-Instruct**, adaptado para atuar como um **tutor de programação Python** através de QLoRA (Quantized Low-Rank Adaptation).
 
----
-
 ## 1. Objetivo
 
 O objetivo deste projeto é realizar o treinamento de uma LLM local para responder perguntas relacionadas à programação Python.
@@ -24,8 +22,6 @@ Durante o desenvolvimento foram realizados:
 - desenvolvimento de uma interface gráfica;
 - verificação do uso da GPU;
 - documentação do projeto.
-
----
 
 ## 2. Problema escolhido
 
@@ -62,8 +58,6 @@ Entre os assuntos presentes no dataset estão:
 - LoRA;
 - QLoRA.
 
----
-
 ## 3. Modelo utilizado
 
 O modelo base escolhido foi:
@@ -73,8 +67,6 @@ O modelo base escolhido foi:
 O modelo possui aproximadamente 3 bilhões de parâmetros e foi escolhido por apresentar um bom equilíbrio entre capacidade de geração e possibilidade de execução local na GPU disponível.
 
 O treinamento foi realizado utilizando **LoRA**, permitindo ajustar apenas uma pequena parcela dos parâmetros do modelo.
-
----
 
 ## 4. Hardware e ambiente
 
@@ -94,8 +86,6 @@ Os testes e treinamentos foram realizados utilizando a GPU.
 - Visual Studio Code
 - Ambiente virtual Python (`venv`)
 
----
-
 ## 5. Quantização
 
 Para possibilitar a execução do modelo na RTX 3050 com 6 GB de VRAM, foi utilizada quantização de 4 bits.
@@ -114,8 +104,6 @@ BitsAndBytesConfig(
 Foi utilizado o formato NF4 (NormalFloat4), juntamente com double quantization.
 
 A quantização reduz o consumo de memória da GPU, tornando possível executar e treinar o modelo utilizando uma quantidade limitada de VRAM.
-
----
 
 ## 6. QLoRA
 
@@ -145,8 +133,6 @@ LoraConfig(
 
 Foram treinados 3.686.400 parâmetros de um total de 3.089.625.088 parâmetros. Isso corresponde a aproximadamente 0,1193% dos parâmetros totais do modelo.
 
----
-
 ## 7. Dataset
 
 O dataset foi criado especificamente para o projeto.
@@ -158,8 +144,6 @@ data/
 └──validation.jsonl
 
 O conjunto de treinamento possui 150 exemlos. Já o de validação possui 3 exemplos. Os dados foram armazenados no formato JSONL. Cada exemplo contém uma interação entre usuário e assistente relacionada à programação Python.
-
----
 
 ## 8. Estrutura do projeto
 
@@ -194,8 +178,6 @@ CP2-IA/
 ├── .gitignore
 └── README.md
 
----
-
 ## 9. Comparação dos Experimentos A e B
 
 Foram realizados dois experimentos alterando apenas o learning rate. As demais configurações foram mantidas iguais para permitir uma comparação justa.
@@ -215,7 +197,7 @@ CUDA | 13.2 | 13.2
 Parâmetros treináveis | 3.686.400 | 3.686.400
 % parâmetros treináveis | 0,1193% | 0,1193%
 
-## 11. Avaliação qualitativa
+## 10. Avaliação qualitativa
 
 Após o treinamento, os dois modelos foram avaliados utilizando as mesmas 8 perguntas sobre programação Python.
 
@@ -248,7 +230,7 @@ B | 4,75/5
 
 Os dois experimentos apresentaram desempenho qualitativo equivalente. Por isso, a escolha do modelo final foi realizada considerando principalmente o eval_loss.
 
-### 12. Frontend
+### 11. Frontend
 
 Foi desenvolvido um frontend utilizando Gradio. A interface permite ao usuário:
 
@@ -264,9 +246,9 @@ A interface também apresenta GPU, CUDA, VRAM utilizada, VRAM reservada.
 
 Isso permite verificar durante a execução que o modelo está sendo executado utilizando a GPU.
 
-## 13. Execução do projeto
+## 12. Execução do projeto
 
-### 13.1 Criar ambiente virtual
+### 12.1 Criar ambiente virtual
 
 No diretório do projeto, execute o comando
 
@@ -279,7 +261,7 @@ E depois execute
 .\venv\Scripts\activate
 ```
 
-### 13.2 Instalar PyTorch
+### 12.2 Instalar PyTorch
 
 Execute no terminal o comando
 
@@ -287,7 +269,7 @@ Execute no terminal o comando
 pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cu132
 ```
 
-### 13.3 Instalar dependências
+### 12.3 Instalar dependências
 
 Execute o comando 
 
@@ -295,7 +277,7 @@ Execute o comando
 pip install -r requirements.txt
 ```
 
-## 14. Verificar GPU
+## 13. Verificar GPU
 
 Antes de executar o projeto, verificar se a GPU está disponível:
 
@@ -303,7 +285,7 @@ Antes de executar o projeto, verificar se a GPU está disponível:
 nvidia-smi
 ```
 
-## 15. Treinar os experimentos
+## 14. Treinar os experimentos
 
 ### Experimento A
 
@@ -317,7 +299,7 @@ python src\train.py --experiment A --learning-rate 0.0001
 python src\train.py --experiment B --learning-rate 0.00005
 ```
 
-## 16. Avaliar os modelos
+## 15. Avaliar os modelos
 
 ### Experimento A
 
@@ -331,7 +313,7 @@ python src\evaluate.py --experiment A
 python src\evaluate.py --experiment B
 ```
 
-## 17. Executar o frontend
+## 16. Executar o frontend
 
 Na raiz do projeto, execute o comando abaixo:
 
@@ -339,7 +321,7 @@ Na raiz do projeto, execute o comando abaixo:
 python frontend\app.py
 ```
 
-## 18. Evidências
+## 17. Evidências
 
 Foram realizadas capturas de tela para demonstrar os requisitos da atividade.
 
@@ -347,7 +329,7 @@ As evidências incluem a identificação da GPU instalada e a identificação/co
 
 Os screenshots utilizados na entrega estão na pasta "screenshots".
 
-## 19. Tecnologias utilizadas
+## 18. Tecnologias utilizadas
 
 - Python
 - PyTorch
@@ -362,7 +344,7 @@ Os screenshots utilizados na entrega estão na pasta "screenshots".
 - Matplotlib
 - Visual Studio Code
 
-## 20. Conclusão
+## 19. Conclusão
 
 O projeto demonstrou a possibilidade de realizar o treinamento e execução local de uma LLM utilizando uma GPU NVIDIA RTX 3050 com 6 GB de VRAM.
 
