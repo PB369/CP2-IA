@@ -188,18 +188,18 @@ Foram realizados dois experimentos alterando apenas o learning rate. As demais c
 
 ### Comparação A × B
 
-Métrica	| Experimento A | Experimento B
-Learning rate | 1e-4 | 5e-5
-Épocas | 1 | 1
-Treinamento | 150 exemplos | 150 exemplos
-Validação | 3 exemplos | 3 exemplos
-Train loss | 2.753 | 3.071
-Eval loss | 2.740 | 3.286
-Tempo | 92,42s | 87,49s
-GPU | RTX 3050 6 GB | RTX 3050 6 GB
-CUDA | 13.2 | 13.2
-Parâmetros treináveis | 3.686.400 | 3.686.400
-% parâmetros treináveis | 0,1193% | 0,1193%
+| Métrica	| Experimento A | Experimento B |
+| Learning rate | 1e-4 | 5e-5 |
+| Épocas | 1 | 1 |
+| Treinamento | 150 exemplos | 150 exemplos |
+| Validação | 3 exemplos | 3 exemplos |
+| Train loss | 2.753 | 3.071 |
+| Eval loss | 2.740 | 3.286 |
+| Tempo | 92,42s | 87,49s |
+| GPU | RTX 3050 6 GB | RTX 3050 6 GB |
+| CUDA | 13.2 | 13.2 |
+| Parâmetros treináveis | 3.686.400 | 3.686.400 |
+| % parâmetros treináveis | 0,1193% | 0,1193% |
 
 ## 10. Avaliação qualitativa
 
@@ -218,13 +218,13 @@ As perguntas abordaram:
 
 Foi utilizada uma escala de 0 a 5:
 
-Nota | Critério
-5 | Resposta correta, completa e clara
-4 | Resposta correta com pequena imprecisão
-3 | Resposta parcialmente correta
-2 | Contém erros importantes
-1 | Maior parte incorreta
-0 | Sem resposta ou completamente incorreta
+| Nota | Critério | 
+| 5 | Resposta correta, completa e clara |
+| 4 | Resposta correta com pequena imprecisão |
+| 3 | Resposta parcialmente correta |
+| 2 | Contém erros importantes |
+| 1 | Maior parte incorreta |
+| 0 | Sem resposta ou completamente incorreta |
 
 ### Resultado
 
