@@ -220,7 +220,7 @@ As perguntas abordaram:
 Foi utilizada uma escala de 0 a 5:
 
 | Nota | Critério |
-|---|---|---|
+| --- | --- |
 | 5 | Resposta correta, completa e clara |
 | 4 | Resposta correta com pequena imprecisão |
 | 3 | Resposta parcialmente correta |
