@@ -230,9 +230,10 @@ Foi utilizada uma escala de 0 a 5:
 
 ### Resultado
 
-Experimento | Média
-A | 4,75/5
-B | 4,75/5
+| Experimento | Média |
+| --- | --- |
+| A | 4,75/5 |
+| B | 4,75/5 |
 
 Os dois experimentos apresentaram desempenho qualitativo equivalente. Por isso, a escolha do modelo final foi realizada considerando principalmente o eval_loss.
 
